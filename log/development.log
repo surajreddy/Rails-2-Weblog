@@ -827,3 +827,66 @@ Rendered comments/_comment (0.0ms)
 Rendered comments/_comment (0.0ms)
 DEPRECATION WARNING: formatted_posts_path() has been deprecated. Please pass format to the standard posts_path method instead.. (called from _run_erb_app47views47layouts47posts46html46erb at C:/Projects/rails/weblog/app/views/layouts/posts.html.erb:9)
 Completed in 109ms (View: 62, DB: 16) | 200 OK [http://localhost/posts/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2009-05-18 19:24:26) [POST]
+  Parameters: {"commit"=>"Add Comment", "post_id"=>"1", "authenticity_token"=>"PjoH/Z6V0MqyWh9hQwlzaEEYIYi96VaqQ044wA+/qX8=", "comment"=>{"body"=>"Testing if ajax works."}}
+  [4;35;1mPost Columns (15.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`id` = 1) [0m
+  [4;35;1mComment Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mComment Create (15.0ms)[0m   [0mINSERT INTO `comments` (`updated_at`, `body`, `post_id`, `created_at`) VALUES('2009-05-18 23:24:26', 'Testing if ajax works.', 1, '2009-05-18 23:24:26')[0m
+  [4;36;1mSQL (453.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/posts/1
+Completed in 547ms (DB: 483) | 302 Found [http://localhost/posts/1/comments]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#show (for 127.0.0.1 at 2009-05-18 19:24:27) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`id` = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+Rendered posts/_post (0.0ms)
+  [4;35;1mComment Load (0.0ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.post_id = 1) [0m
+  [4;36;1mComment Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+Rendered comments/_comment (0.0ms)
+Rendered comments/_comment (16.0ms)
+Rendered comments/_comment (0.0ms)
+Rendered comments/_comment (0.0ms)
+DEPRECATION WARNING: formatted_posts_path() has been deprecated. Please pass format to the standard posts_path method instead.. (called from _run_erb_app47views47layouts47posts46html46erb at C:/Projects/rails/weblog/app/views/layouts/posts.html.erb:9)
+Completed in 141ms (View: 110, DB: 0) | 200 OK [http://localhost/posts/1]
+  [4;35;1mSQL (15.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2009-05-18 19:24:37) [POST]
+  Parameters: {"commit"=>"Add Comment", "post_id"=>"1", "authenticity_token"=>"PjoH/Z6V0MqyWh9hQwlzaEEYIYi96VaqQ044wA+/qX8=", "comment"=>{"body"=>"Testing if ajax works."}}
+  [4;35;1mPost Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`id` = 1) [0m
+  [4;35;1mComment Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mComment Create (0.0ms)[0m   [0mINSERT INTO `comments` (`updated_at`, `body`, `post_id`, `created_at`) VALUES('2009-05-18 23:24:37', 'Testing if ajax works.', 1, '2009-05-18 23:24:37')[0m
+  [4;36;1mSQL (422.0ms)[0m   [0;1mCOMMIT[0m
+Rendering comments/create
+Rendered comments/_comment (16.0ms)
+Completed in 953ms (View: 360, DB: 437) | 200 OK [http://localhost/posts/1/comments]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (15.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2009-05-18 19:24:44) [POST]
+  Parameters: {"commit"=>"Add Comment", "post_id"=>"1", "authenticity_token"=>"PjoH/Z6V0MqyWh9hQwlzaEEYIYi96VaqQ044wA+/qX8=", "comment"=>{"body"=>"IT WOKRS!!!"}}
+  [4;35;1mPost Columns (15.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`id` = 1) [0m
+  [4;35;1mComment Columns (16.0ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mSQL (16.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mComment Create (0.0ms)[0m   [0mINSERT INTO `comments` (`updated_at`, `body`, `post_id`, `created_at`) VALUES('2009-05-18 23:24:44', 'IT WOKRS!!!', 1, '2009-05-18 23:24:44')[0m
+  [4;36;1mSQL (563.0ms)[0m   [0;1mCOMMIT[0m
+Rendering comments/create
+Rendered comments/_comment (63.0ms)
+Completed in 797ms (View: 93, DB: 625) | 200 OK [http://localhost/posts/1/comments]
