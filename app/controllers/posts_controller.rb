@@ -1,4 +1,11 @@
 class PostsController < ApplicationController
+  
+  before_filter :authenticate, :except => [:index, :show]
+  
+  #For GCX Auth
+  #before_filter CASClient::Frameworks::Rails::GatewayFilter, :only => [:index, :show]
+  #before_filter CASClient::Frameworks::Rails::Filter, :except => [:index, :show]
+  
   # GET /posts
   # GET /posts.xml
   def index
@@ -84,4 +91,12 @@ class PostsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  private
+  
+  def authenticate
+    authenticate_or_request_with_http_basic do |name, password|
+      name == "admin" && password = "notasecret"
+    end
+  end  
 end
