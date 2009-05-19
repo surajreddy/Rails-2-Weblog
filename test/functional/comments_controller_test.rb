@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class CommentsControllerTest < ActionController::TestCase
+
   test "should create comment and redirect to post without javascript" do
     p = Post.create!(:title => 'hello', :body => 'world')
     post :create, :post_id => p.id, :comment => { :body => 'nice!' }
